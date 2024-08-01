@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container difficulty-container">
-        <label for="select2">Выберите сложность: </label>
-        <select id="select2">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <button id="generateButton">Сгенерировать число</button>
-        <p id="secretNumber"></p>
-    </div>
-    <div class="container">
-        <h1>Быки и Коровы</h1>
-        <div class="game">
-            <div class="info">
-                <p>Введите число</p>
-                <input type="text" id="userInput" maxlength="4">
-                <button id="guessButton">Угадать</button>
-            </div>
-            <div class="results">
-                <h2>Результаты:</h2>
-                <ul id="resultsList"></ul>
-            </div>
+    <div class="container" id="auth-container">
+        <h1>Логин</h1>
+        <div class="info">
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
         </div>
+        <button onclick="login()">Логин</button>
+        <p>Нету аккаунта? <a href="#" onclick="showRegister()">Регистрация</a></p>
     </div>
+
+    <div class="container" id="register-container" style="display: none;">
+        <h1>Регистрация</h1>
+        <div class="info">
+            <input type="text" id="register-username" placeholder="Username">
+            <input type="password" id="register-password" placeholder="Password">
+        </div>
+        <button onclick="register()">Регистрация</button>
+        <p>Есть аккаунт? <a href="#" onclick="showLogin()">Войдите тут</a></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
